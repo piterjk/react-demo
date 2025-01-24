@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ProductList from "./ProductList";
 import BomTree from "./BomTree";
+import FileManager from "./FileManager";
 
 const PdmMain = () => {
 
@@ -11,6 +12,10 @@ const PdmMain = () => {
         { id: 1, name: '상품 A', status: '재고 있음', lastModified: '2025-01-20' },
         { id: 2, name: '상품 B', status: '재고 없음', lastModified: '2025-01-22' },
         { id: 3, name: '상품 C', status: '판매 중지', lastModified: '2025-01-21' },
+        { id: 4, name: '상품 D', status: '판매 중지', lastModified: '2025-01-21' },
+        { id: 5, name: '상품 E', status: '판매 중지', lastModified: '2025-01-20' },
+        { id: 6, name: '상품 F', status: '판매 중지', lastModified: '2025-01-15' },
+        { id: 7, name: '상품 G', status: '재고 없음', lastModified: '2025-01-29' },
     ];
 
     const handleSelectProduct = (product) => {
@@ -37,19 +42,24 @@ const PdmMain = () => {
                         </button>
                     </li>
                     <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                        <button className="nav-link" id="file-tab" data-bs-toggle="tab" data-bs-target="#file"
                                 type="button" role="tab" aria-controls="contact" aria-selected="false">
-                            Contact
+                            파일 관리
                         </button>
                     </li>
                 </ul>
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane fade show active" id="product" role="tabpanel"
-                         aria-labelledby="product-tab" style={{height:'100vh'}}>
+                         aria-labelledby="product-tab" style={{height: '100vh'}}>
                         <ProductList products={products} onSelect={handleSelectProduct}/>
                     </div>
-                    <div className="tab-pane fade show active" id="bom" role="tabpanel" aria-labelledby="bom-tab" style={{height:'100vh'}}>
+                    <div className="tab-pane fade show active" id="bom" role="tabpanel" aria-labelledby="bom-tab"
+                         style={{height: '100vh'}}>
                         <BomTree/>
+                    </div>
+                    <div className="tab-pane fade show active" id="file" role="tabpanel" aria-labelledby="file-tab"
+                         style={{height: '100vh'}}>
+                        <FileManager/>
                     </div>
                 </div>
             </div>

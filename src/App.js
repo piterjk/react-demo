@@ -11,13 +11,12 @@ import PdmMain from "./components/plm/pdm/PdmMain";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Aside from "./components/layout/Aside";
+import TaskMain from "./components/plm/task/TaskMain";
+
 
 
 function AuthenticatedRoute({children}) {
     const authContext = useAuth();
-
-    console.log('App AuthenticatedRoute', authContext);
-    console.log(authContext.isAuthenticated)
 
     if( authContext.isAuthenticated )
         return children
@@ -26,13 +25,17 @@ function AuthenticatedRoute({children}) {
 }
 
 function App() {
-  return (
+    const authContext = useAuth();
+
+    return (
       <div className="App">
           <AuthProvider>
               <BrowserRouter>
                   <Header/>
                   <div className="App-container">
-                      <Aside/>
+                      <AuthenticatedRoute>
+                        <Aside/>
+                      </AuthenticatedRoute>
                       <Routes>
                           <Route path='/' element={
                               <AuthenticatedRoute>
@@ -50,6 +53,11 @@ function App() {
                               <AuthenticatedRoute>
                                   <PdmMain/>
                               </AuthenticatedRoute>} />
+                          <Route path='/plm-task' element={
+                              <AuthenticatedRoute>
+                                  <TaskMain/>
+                              </AuthenticatedRoute>} />
+
                           <Route path='/login' element={<Login/>} />
                           <Route path={'*'} element={<Error/>} />
                       </Routes>

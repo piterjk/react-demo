@@ -52,10 +52,9 @@ function Aside(){
                                     </Link>
                                 </li>
                                 <li>
-                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                    <a href="#" className="nav-link text-white">
+                                    <Link to="plm-task" className="nav-link text-white">
                                         작업 관리
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
