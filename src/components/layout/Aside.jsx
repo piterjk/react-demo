@@ -42,19 +42,31 @@ function Aside(){
                                 aria-expanded="false"
                                 aria-controls="submenu1"
                             >
-                                <FontAwesomeIcon icon={faList}/> {isOpen && "Submenu"}
+                                <FontAwesomeIcon icon={faList}/> {isOpen && "PLM"}
                             </a>
                             <ul className="collapse nav flex-column ms-3" id="submenu1">
                                 <li>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                    <Link to="/plm-pdm" className="nav-link text-white">
+                                        제품 데이터 관리 (PDM)
+                                    </Link>
+                                </li>
+                                <li>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                     <a href="#" className="nav-link text-white">
-                                        Submenu 1
+                                        작업 관리
                                     </a>
                                 </li>
                                 <li>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                     <a href="#" className="nav-link text-white">
-                                        Submenu 2
+                                        설계 변경 관리 (ECO/ECN)
+                                    </a>
+                                </li>
+                                <li>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                    <a href="#" className="nav-link text-white">
+                                        품질 관리 (Quality Management)
                                     </a>
                                 </li>
                             </ul>

@@ -7,6 +7,10 @@ import Error from "./components/error/Error";
 import AuthProvider, {useAuth} from "./components/security/AuthContext";
 import GanttChart from "./components/gantt/GanttChart";
 import Dashboard from "./components/dashboard/Dashboard";
+import PdmMain from "./components/plm/pdm/PdmMain";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import Aside from "./components/layout/Aside";
 
 
 function AuthenticatedRoute({children}) {
@@ -20,27 +24,37 @@ function AuthenticatedRoute({children}) {
    
     return <Navigate to={"/login"} />
 }
+
 function App() {
   return (
       <div className="App">
           <AuthProvider>
               <BrowserRouter>
-                  <Routes>
-                      <Route path='/' element={
-                          <AuthenticatedRoute>
-                            <AppMain/>
-                          </AuthenticatedRoute>} />
-                      <Route path='/dashboard' element={
-                          <AuthenticatedRoute>
-                              <Dashboard/>
-                          </AuthenticatedRoute>} />
-                      <Route path='/gantt-chart' element={
-                          <AuthenticatedRoute>
-                              <GanttChart/>
-                          </AuthenticatedRoute>} />
-                      <Route path='/login' element={<Login/>} />
-                      <Route path={'*'} element={<Error/>} />
-                  </Routes>
+                  <Header/>
+                  <div className="App-container">
+                      <Aside/>
+                      <Routes>
+                          <Route path='/' element={
+                              <AuthenticatedRoute>
+                                <AppMain/>
+                              </AuthenticatedRoute>} />
+                          <Route path='/dashboard' element={
+                              <AuthenticatedRoute>
+                                  <Dashboard/>
+                              </AuthenticatedRoute>} />
+                          <Route path='/gantt-chart' element={
+                              <AuthenticatedRoute>
+                                  <GanttChart/>
+                              </AuthenticatedRoute>} />
+                          <Route path='/plm-pdm' element={
+                              <AuthenticatedRoute>
+                                  <PdmMain/>
+                              </AuthenticatedRoute>} />
+                          <Route path='/login' element={<Login/>} />
+                          <Route path={'*'} element={<Error/>} />
+                      </Routes>
+                  </div>
+                  <Footer/>
               </BrowserRouter>
           </AuthProvider>
       </div>

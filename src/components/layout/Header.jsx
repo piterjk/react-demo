@@ -5,15 +5,12 @@ function Header(){
 
     const authContext = useAuth()
 
-    console.log(authContext.user)
-
     function logout(){
         authContext.logout()
     }
 
     return (
         <header className="App-header">
-
             <nav className="navbar navbar-dark bg-dark d-flex align-items-center" style={{height: '100px',width:'100%'}}>
                 {/* 좌측 로고 */}
                 <div className="container-fluid">

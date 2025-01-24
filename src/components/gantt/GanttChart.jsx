@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import gantt from 'dhtmlx-gantt';
 import 'dhtmlx-gantt/codebase/dhtmlxgantt.css';
-import Header from "../layout/Header";
-import Aside from "../layout/Aside";
-import Footer from "../layout/Footer";
 
 const GanttChart = () => {
     useEffect(() => {
@@ -20,17 +17,10 @@ const GanttChart = () => {
     }, []);
 
     return (
-        <div className="AppMain">
-            <Header/>
-            <div className="App-container">
-                <Aside/>
-                <main className="App-main">
-                    <h1>간트 차트</h1>
-                    <div id="gantt_here" style={{height: '400px'}}/>
-                </main>
-            </div>
-            <Footer/>
-        </div>
+        <main className="App-main">
+            <h1>간트 차트</h1>
+            <div id="gantt_here" style={{height: '400px'}}/>
+        </main>
     )
 };
 

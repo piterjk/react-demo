@@ -1,14 +1,10 @@
-import Header from "./layout/Header";
-import Contaner from "./layout/Contaner";
-import Footer from "./layout/Footer";
+import Main from "./layout/Main";
 
 function AppMain() {
     return (
-        <div className="AppMain">
-            <Header/>
-            <Contaner />
-            <Footer />
-        </div>
+        <>
+            <Main/>
+        </>
     )
 }
 
