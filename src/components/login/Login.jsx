@@ -1,10 +1,19 @@
 import React, {useState} from "react";
+import {useAuth} from "../security/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 function Login() {
+
+    const authContext = useAuth();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
+
+    //login error
+    const [showErrorMessage, setShowErrorMessage] = useState(false);
+
+    const navigate = useNavigate();
 
 
     function handleEmailChange(evt) {
@@ -21,7 +30,11 @@ function Login() {
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        console.log(rememberMe);
+        if( authContext.login(email,password) ){
+            navigate("/");
+        }else{
+            setShowErrorMessage(true)
+        }
     }
 
     return (
@@ -29,6 +42,7 @@ function Login() {
         <div className="card p-4 shadow" style={{width: '100%', maxWidth: '400px'}}>
             <h3 className="text-center mb-4">Login</h3>
             <form onSubmit={handleSubmit}>
+                {showErrorMessage  && <div className={"text-danger"}>인증실패! 이메일과 비밀번호를 확인하세요!</div>}
                 {/*{ <!-- 이메일 입력 --> }*/}
                 <div className="mb-3">
                     <label form="email" className="form-label">Email address</label>

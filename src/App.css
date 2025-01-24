@@ -45,14 +45,14 @@
   display: flex;
 }
 .App-aside {
-  width: 250px;
-  flex-direction: column;
-  border-right:1px solid gray;
+  text-align: left;
   height: calc(100vh - 100px);
 }
 .App-main {
+  padding: 2rem;
   width: calc(100vh - 200px);
   flex-direction: column;
+  flex:1 1 auto;
 }
 
 @keyframes App-logo-spin {
@@ -63,3 +63,31 @@
     transform: rotate(360deg);
   }
 }
+
+.collapse {
+  display: none !important; /* 기본 상태 */
+}
+
+.collapse.show {
+  display: flex !important; /* 펼쳐진 상태 */
+}
+.nav {
+  flex-wrap: nowrap !important;
+}
+
+
+
+/* React 로고 회전 애니메이션 */
+.rotating-logo {
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

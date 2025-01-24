@@ -5,16 +5,12 @@ function Main(){
         <main className="App-main">
             <img src={logo} className="App-logo" alt="logo"/>
             <p>
-                Edit <code>src/App.js</code> and save to reload.
+                Welcome to React Native App
             </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Learn React
-            </a>
+            <p>
+                Developer : 김정수<br/>
+                Mail: <a href={'mailto:piterjk@naver.com'}>piterjk@naver.com</a>
+            </p>
         </main>
     )
 }
