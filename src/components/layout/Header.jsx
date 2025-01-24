@@ -1,9 +1,16 @@
 import {useAuth} from "../security/AuthContext";
 import logo from "../../logo.svg";
+import {useNavigate} from "react-router-dom";
 
 function Header(){
 
+    const navigate = useNavigate();
+
     const authContext = useAuth()
+
+    function login(){
+        navigate("/login");
+    }
 
     function logout(){
         authContext.logout()
@@ -26,9 +33,8 @@ function Header(){
                     {/* 우측 사용자 정보 */}
                     <div className="d-flex align-items-center">
                         <span className="text-white me-3">{authContext.user}</span>
-                        <button className="btn btn-primary" onClick={logout}>
-                            로그아웃
-                        </button>
+                        {authContext.isAuthenticated && <button className="btn btn-primary" onClick={logout}>로그아웃</button>}
+                        {!authContext.isAuthenticated && <button className="btn btn-primary" onClick={login}>로그인</button>}
                     </div>
                 </div>
             </nav>

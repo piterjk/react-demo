@@ -26,11 +26,13 @@ const PdmMain = () => {
     return (
         <main className="App-main">
             <div>
-                <h2>제품 데이터 관리(PDM)</h2>
-
+                <div className="p-4 bg-primary text-white rounded shadow text-start mb-3 opacity-75">
+                    <h2>제품 데이터 관리(PDM)</h2>
+                </div>
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
                     <li className="nav-item" role="presentation">
-                        <button className="nav-link active" id="product-tab" data-bs-toggle="tab" data-bs-target="#product"
+                        <button className="nav-link active" id="product-tab" data-bs-toggle="tab"
+                                data-bs-target="#product"
                                 type="button" role="tab" aria-controls="home" aria-selected="true">
                             제품 목록
                         </button>
@@ -50,15 +52,13 @@ const PdmMain = () => {
                 </ul>
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane fade show active" id="product" role="tabpanel"
-                         aria-labelledby="product-tab" style={{height: '100vh'}}>
+                         aria-labelledby="product-tab">
                         <ProductList products={products} onSelect={handleSelectProduct}/>
                     </div>
-                    <div className="tab-pane fade show active" id="bom" role="tabpanel" aria-labelledby="bom-tab"
-                         style={{height: '100vh'}}>
+                    <div className="tab-pane fade" id="bom" role="tabpanel" aria-labelledby="bom-tab">
                         <BomTree/>
                     </div>
-                    <div className="tab-pane fade show active" id="file" role="tabpanel" aria-labelledby="file-tab"
-                         style={{height: '100vh'}}>
+                    <div className="tab-pane fade" id="file" role="tabpanel" aria-labelledby="file-tab">
                         <FileManager/>
                     </div>
                 </div>

@@ -5,7 +5,9 @@ const TaskDetail = ({ task }) => {
 
     return (
         <div>
-            <h2>작업 상세 정보</h2>
+            <div className="p-4 bg-primary text-white rounded shadow text-start mb-3 opacity-75">
+                <h2>작업 상세 정보</h2>
+            </div>
             <div className="card">
                 <div className="card-body">
                     <div className="mb-3 d-flex">

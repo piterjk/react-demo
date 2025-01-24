@@ -22,7 +22,9 @@ const TaskForm = ({ onSave }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2>작업 추가/수정</h2>
+            <div className="p-4 bg-primary text-white rounded shadow text-start mb-3 opacity-75">
+                <h2>작업 추가/수정</h2>
+            </div>
             <div className="mb-3">
                 <label>작업 이름</label>
                 <input

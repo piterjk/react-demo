@@ -18,10 +18,12 @@ const GanttChart = () => {
 
     return (
         <main className="App-main">
-            <h1>간트 차트</h1>
+            <div className="p-4 bg-primary text-white rounded shadow text-start mb-3 opacity-75">
+                <h2>간트 차트</h2>
+            </div>
             <div id="gantt_here" style={{height: '400px'}}/>
         </main>
-    )
+)
 };
 
 export default GanttChart;

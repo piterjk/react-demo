@@ -33,7 +33,6 @@
   justify-content: center;
   font-size: 0.9rem;
   color: white;
-  bottom:0;
 
   a {color:white;}
 }
@@ -43,11 +42,12 @@
 }
 .App-container {
   display: flex;
+  align-items: stretch;
 }
+
 .App-aside {
   text-align: left;
-  height: calc(100vh - 100px);
-}
+ }
 .App-main {
   padding: 2rem;
   width: calc(100vh - 200px);

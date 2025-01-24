@@ -12,6 +12,8 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Aside from "./components/layout/Aside";
 import TaskMain from "./components/plm/task/TaskMain";
+import EcoMain from "./components/plm/eco/EcoMain";
+import QualityMain from "./components/plm/quality/QualityMain";
 
 
 
@@ -56,6 +58,15 @@ function App() {
                           <Route path='/plm-task' element={
                               <AuthenticatedRoute>
                                   <TaskMain/>
+                              </AuthenticatedRoute>} />
+
+                          <Route path='/plm-eco' element={
+                              <AuthenticatedRoute>
+                                  <EcoMain/>
+                              </AuthenticatedRoute>} />
+                          <Route path='/plm-qlt' element={
+                              <AuthenticatedRoute>
+                                  <QualityMain/>
                               </AuthenticatedRoute>} />
 
                           <Route path='/login' element={<Login/>} />

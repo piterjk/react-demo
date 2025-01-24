@@ -55,9 +55,10 @@ const Dashboard = () => {
 
 
     return (
-            <main className="App-main">
-
-                <h1 className="mb-4 text-center">대시보드</h1>
+        <main className="App-main">
+            <div className="p-4 bg-primary text-white rounded shadow text-start mb-3 opacity-75">
+                <h2 className="text-center">대시보드</h2>
+            </div>
                 <div className="row g-4">
                     {cardData.map((card, index) => (
                         <div className="col-md-4" key={index}>
@@ -89,21 +90,21 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                    <div className={'mt-3 row'}>
-                        <div className={'col-md-5 '}>
-                            <div className="card card-body">
-                                <Charts/>
-                            </div>
-                        </div>
-                        <div className={'col-md-5'}>
-                            <div className="card card-body">
-
-                            </div>
+                <div className={'mt-3 row'}>
+                    <div className={'col-md-5 '}>
+                        <div className="card card-body">
+                            <Charts/>
                         </div>
                     </div>
+                    <div className={'col-md-5'}>
+                        <div className="card card-body">
 
-            </main>
-    )
+                        </div>
+                    </div>
+                </div>
+
+        </main>
+)
 };
 
 export default Dashboard;

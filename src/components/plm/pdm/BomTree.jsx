@@ -33,7 +33,7 @@ const BomTree = () => {
 
     return (
         <div className="mt-3">
-            <div style={{ height: '100vh' }}>
+            <div style={{ height: 'calc(100vh - 320px)' }}>
                 <Tree data={bomData} orientation="vertical"
                       onNodeClick={(nodeData) => handleNodeClick(nodeData)}
                       translate={{ x: 300, y: 100 }}

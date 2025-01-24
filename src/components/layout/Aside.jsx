@@ -10,10 +10,10 @@ function Aside(){
     const toggleSidebar = () => setIsOpen(!isOpen);
 
     return (
-        <aside className="App-aside">
+        <aside className="App-aside bg-dark ">
             <div className="d-flex">
                 {/* 사이드바 */}
-                <div className={`sidebar bg-dark text-white ${isOpen ? "w-250" : "w-75"}`} style={{ height: "100vh", transition: "width 0.3s" }}>
+                <div className={`sidebar text-white ${isOpen ? "w-250" : "w-75"}`} style={{ height: "calc(100vh - 150px)", transition: "width 0.3s" }}>
                     <button className="btn btn-dark w-100 text-start" onClick={toggleSidebar} style={{ textAlign: "center", padding: "10px 0" }}>
                         <FontAwesomeIcon icon={isOpen ? faChevronLeft : faChevronRight} style={{ fontSize: "1.5rem" }} />
                     </button>
@@ -52,21 +52,19 @@ function Aside(){
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="plm-task" className="nav-link text-white">
+                                    <Link to="/plm-task" className="nav-link text-white">
                                         작업 관리
                                     </Link>
                                 </li>
                                 <li>
-                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                    <a href="#" className="nav-link text-white">
+                                    <Link to="/plm-eco" className="nav-link text-white">
                                         설계 변경 관리 (ECO/ECN)
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                    <a href="#" className="nav-link text-white">
+                                    <Link to="/plm-qlt" className="nav-link text-white">
                                         품질 관리 (Quality Management)
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </li>

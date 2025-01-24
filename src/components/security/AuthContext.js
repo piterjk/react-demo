@@ -38,8 +38,9 @@ const AuthProvider = ({ children }) => {
     }
 
     function logout(){
-        setAuthenticated(false)
         sessionStorage.removeItem('user');
+        setAuthenticated(false)
+        setUser(null)
     }
 
     return (
