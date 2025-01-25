@@ -198,6 +198,15 @@ const ChartsJS = () => {
                     <Scatter data={scatterData}/>
                 </div>
             </div>
+
+            <div className={'card mt-5'}>
+                <h2>react-chartjs-2</h2>
+                <div className={'card-body'}>
+                    npm install chart.js react-chartjs-2
+                </div>
+            </div>
+
+
         </main>
     );
 };
