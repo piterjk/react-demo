@@ -1,0 +1,16 @@
+
+.ag-theme-alpine {
+    overflow: auto !important; /* 스크롤 강제 활성화 */
+    position: relative; /* 위치 설정 */
+}
+
+.ag-body-viewport {
+    overflow-x: scroll !important; /* 가로 스크롤 강제 활성화 */
+    overflow-y: scroll !important; /* 세로 스크롤 강제 활성화 */
+}
+
+/* 병합된 셀에 배경색 설정 */
+.ag-cell[style*="z-index: 1"] {
+    background-color: #fff; /* 병합된 셀의 배경색 */
+    border-bottom:var(--ag-row-border-style) var(--ag-row-border-color) var(--ag-row-border-width) !important;
+}
