@@ -10,11 +10,10 @@
 # React Project Demo
 
 
-## 📹 YouTube Video
-[https://youtu.be/3JcPcnIaxuE?si=5y6LgHigL-kHV2ko](https://youtu.be/2haMb07cuhk?si=uEs-INZa50Hktjrf)
+https://piterjk.github.io/react-demo
 
-
-이 프로젝트는 React로 만든 웹 애플리케이션입니다. 자세한 구현 과정을 보고 싶다면 위 영상을 클릭하세요!
+이 프로젝트는 React로 만든 웹 애플리케이션입니다. 
+자세한 구현 과정을 보고 싶다면 위 링크를 클릭하세요!
 
 
 
