@@ -19,13 +19,15 @@ const charData = [
 const Charts = () =>{
 
     return (
-        <LineChart width={700} height={400} data={charData}>
+
+        <LineChart width={600} height={400} data={charData}>
             <Line type="monotone" dataKey="sales" stroke="#8884d8" />
             <CartesianGrid stroke="#ccc" />
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
         </LineChart>
+
     )
 }
 

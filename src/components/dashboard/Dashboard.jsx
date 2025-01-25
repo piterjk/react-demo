@@ -81,30 +81,21 @@ const Dashboard = () => {
                     ))}
                 </div>
 
-                <div className={'mt-3 row'}>
-                    <div className="col-md-6">
-                        <Notifications notifications={notifications}/>
-                    </div>
-                    <div className="col-md-6">
-                        <Messages messages={messages}/>
+            <div className={'mt-3 row'}>
+                <div className={'col-md-4 '}>
+                    <div className="card card-body overflow-scroll" >
+                        <Charts/>
                     </div>
                 </div>
-
-                <div className={'mt-3 row'}>
-                    <div className={'col-md-5 '}>
-                        <div className="card card-body">
-                            <Charts/>
-                        </div>
-                    </div>
-                    <div className={'col-md-5'}>
-                        <div className="card card-body">
-
-                        </div>
-                    </div>
+                <div className="col-md-4 text-start">
+                    <Notifications notifications={notifications}/>
                 </div>
-
+                <div className="col-md-4 text-start">
+                    <Messages messages={messages}/>
+                </div>
+            </div>
         </main>
-)
+    )
 };
 
 export default Dashboard;
