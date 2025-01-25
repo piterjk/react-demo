@@ -15,7 +15,6 @@ function Login() {
 
     const navigate = useNavigate();
 
-
     function handleEmailChange(evt) {
         setEmail(evt.target.value);
     }
