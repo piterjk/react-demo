@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { AgGridReact } from '@ag-grid-community/react';
 import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
 
@@ -8,7 +8,7 @@ import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 const GridTable = () => {
 
-    const rowData = [
+    const [rowData, setRowData] = useState([
         {
             make: '현대',
             model: '소나타',
@@ -109,19 +109,30 @@ const GridTable = () => {
             fuelType: 'Gasoline',
             transmission: 'Automatic'
         }
-    ];
+    ]);
 
 
     const columnDefs = [
-        { field: 'make' , width: 200, pinned: "left" },
-        { field: 'model' , width: 200, cellClass: "text-start"},
-        { field: 'price' , width: 200, cellClass: "text-end", valueFormatter: (params) =>new Intl.NumberFormat("ko-KR").format(params.value)},
-        { field: 'engine' , width: 200, cellClass: "text-start"},
-        { field: 'seats' , width: 200, cellClass: "text-start"},
-        { field: 'cylinders' , width: 200, cellClass: "text-start"},
-        { field: 'fuelType' , width: 200, cellClass: "text-start"},
-        { field: 'transmission' , width: 200, cellClass: "text-start"},
+        { field: 'make' , width: 200, pinned: "left" ,editable: true},
+        { field: 'model' , width: 200, cellClass: "text-start", editable: true},
+        { field: 'price' , width: 200, cellClass: "text-end",editable: true, valueFormatter: (params) =>new Intl.NumberFormat("ko-KR").format(params.value)},
+        { field: 'engine' , width: 200, cellClass: "text-start", editable: true},
+        { field: 'seats' , width: 200, cellClass: "text-start", editable: true},
+        { field: 'cylinders' , width: 200, cellClass: "text-start", editable: true},
+        { field: 'fuelType' , width: 200, cellClass: "text-start", editable: true},
+        { field: 'transmission' , width: 200, cellClass: "text-start", editable: true},
     ];
+
+    const onCellValueChanged = (params) => {
+        console.log('수정된 데이터:', params.data);
+        const updatedRowData = rowData.map((row) =>
+            row.make === params.data.make && row.model === params.data.model
+                ? { ...params.data }
+                : row
+        );
+        setRowData(updatedRowData); // 상태에 반영
+    };
+
 
     return (
         <main className={'App-main'}>
@@ -138,7 +149,11 @@ const GridTable = () => {
                         suppressHorizontalScroll: false, // 가로 스크롤 활성화
                         alwaysShowVerticalScroll: true, // 세로 스크롤 활성화
                     }}
+                    onCellValueChanged={onCellValueChanged} // 셀 값 변경 이벤트 처리
                 />
+            </div>
+            <div className={'mt-3 text-start'}>
+                * 셀 더블 클릭 시 데이터 변경가능
             </div>
             <div className={'card mt-5'}>
                 <h2>ag-grid-react</h2>
