@@ -32,9 +32,9 @@ function Header(){
                     </div>
                     {/* 우측 사용자 정보 */}
                     <div className="d-flex align-items-center">
-                        <span className="text-white me-3">{authContext.user}</span>
-                        {authContext.isAuthenticated && <button className="btn btn-primary" onClick={logout}>로그아웃</button>}
-                        {!authContext.isAuthenticated && <button className="btn btn-primary" onClick={login}>로그인</button>}
+                        <span className="text-white me-3" style={{fontSize:'9pt'}}>{authContext.user}</span>
+                        {authContext.isAuthenticated && <button className="btn btn-sm btn-primary" onClick={logout}>로그아웃</button>}
+                        {!authContext.isAuthenticated && <button className="btn btn-sm btn-primary" onClick={login}>로그인</button>}
                     </div>
                 </div>
             </nav>
