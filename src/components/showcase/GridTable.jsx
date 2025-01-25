@@ -115,7 +115,13 @@ const GridTable = () => {
     const columnDefs = [
         { field: 'make' , width: 200, pinned: "left" ,editable: true},
         { field: 'model' , width: 200, cellClass: "text-start", editable: true},
-        { field: 'price' , width: 200, cellClass: "text-end",editable: true, valueFormatter: (params) =>new Intl.NumberFormat("ko-KR").format(params.value)},
+        { field: 'price' , width: 200, cellClass: "text-end",editable: true,
+            valueFormatter: (params) =>new Intl.NumberFormat("ko-KR").format(params.value),
+            valueParser: (params) => {
+                const value = Number(params.newValue); // 입력값을 숫자로 변환
+                return isNaN(value) ? params.oldValue : value; // 숫자가 아니면 이전 값 유지
+            },
+        },
         { field: 'engine' , width: 200, cellClass: "text-start", editable: true},
         { field: 'seats' , width: 200, cellClass: "text-start", editable: true},
         { field: 'cylinders' , width: 200, cellClass: "text-start", editable: true},
