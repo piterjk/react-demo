@@ -85,12 +85,18 @@ function Aside(){
                                         드래그&드랍 카드
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link to={'showcase-gridtable'} className="nav-link text-white">
+                                        그리드 테이블(ag)
+                                    </Link>
+                                </li>
+
                             </ul>
                         </li>
                         <li className="nav-item">
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a href="#" className="nav-link text-white">
-                                <FontAwesomeIcon icon={faGear}/> {isOpen && "Settings"}
+                            <FontAwesomeIcon icon={faGear}/> {isOpen && "Settings"}
                             </a>
                         </li>
                     </ul>

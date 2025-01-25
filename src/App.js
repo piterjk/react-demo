@@ -15,6 +15,7 @@ import TaskMain from "./components/plm/task/TaskMain";
 import EcoMain from "./components/plm/eco/EcoMain";
 import QualityMain from "./components/plm/quality/QualityMain";
 import GridDragAndDrop from "./components/showcase/GridDragAndDrop";
+import GridTable from "./components/showcase/GridTable";
 
 
 
@@ -73,7 +74,10 @@ function App() {
                               <AuthenticatedRoute>
                                   <GridDragAndDrop/>
                               </AuthenticatedRoute>} />
-
+                          <Route path='/showcase-gridtable' element={
+                              <AuthenticatedRoute>
+                                  <GridTable/>
+                              </AuthenticatedRoute>} />
 
                           <Route path='/login' element={<Login/>} />
                           <Route path={'*'} element={<Error/>} />
