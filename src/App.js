@@ -32,7 +32,7 @@ function App() {
     return (
       <div className="App">
           <AuthProvider>
-              <BrowserRouter>
+              <BrowserRouter basename="/react-demo">
                   <Header/>
                   <div className="App-container">
                       <AuthenticatedRoute>
