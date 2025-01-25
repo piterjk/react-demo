@@ -6,9 +6,9 @@ function Login() {
 
     const authContext = useAuth();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [rememberMe, setRememberMe] = useState(false);
+    const [email, setEmail] = useState('piterjk@naver.com');
+    const [password, setPassword] = useState('1234');
+    const [rememberMe, setRememberMe] = useState(true);
 
     //login error
     const [showErrorMessage, setShowErrorMessage] = useState(false);
