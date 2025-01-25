@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ProductList from "./ProductList";
 import BomTree from "./BomTree";
 import FileManager from "./FileManager";
@@ -6,7 +6,7 @@ import FileManager from "./FileManager";
 const PdmMain = () => {
 
 
-    const [selectedProduct, setSelectedProduct] = useState(null);
+    //const [selectedProduct, setSelectedProduct] = useState(null);
 
     const products = [
         { id: 1, name: '상품 A', status: '재고 있음', lastModified: '2025-01-20' },
@@ -19,7 +19,7 @@ const PdmMain = () => {
     ];
 
     const handleSelectProduct = (product) => {
-        setSelectedProduct(product);
+        //setSelectedProduct(product);
         alert(`${product.name}이(가) 선택되었습니다.`);
     };
 

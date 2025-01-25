@@ -3,14 +3,14 @@ import Tree from 'react-d3-tree';
 
 const BomTree = () => {
 
-    const renderCustomNode = ({ nodeDatum }) => (
-        <g>
-            <circle r={15} fill="blue" />
-            <text fill="white" x="20">
-                {nodeDatum.name}
-            </text>
-        </g>
-    );
+    // const renderCustomNode = ({ nodeDatum }) => (
+    //     <g>
+    //         <circle r={15} fill="blue" />
+    //         <text fill="white" x="20">
+    //             {nodeDatum.name}
+    //         </text>
+    //     </g>
+    // );
 
 
     const bomData = {

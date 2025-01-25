@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faHome, faGear, faList, faDashboard, faChevronLeft, faChevronRight, faChartGantt} from "@fortawesome/free-solid-svg-icons";
+import {faHome, faGear, faList, faDashboard, faChevronLeft, faChevronRight, faChartGantt, faBoltLightning} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 
 
@@ -69,7 +69,26 @@ function Aside(){
                             </ul>
                         </li>
                         <li className="nav-item">
-                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <a
+                                href="#submenu2"
+                                className="nav-link text-white"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#submenu2"
+                                aria-expanded="false"
+                                aria-controls="submenu2"
+                            >
+                                <FontAwesomeIcon icon={faBoltLightning}/> {isOpen && "쇼케이스"}
+                            </a>
+                            <ul className="collapse nav flex-column ms-3" id="submenu2">
+                                <li>
+                                    <Link to={'showcase-dndcards'} className="nav-link text-white">
+                                        드래그&드랍 카드
+                                    </Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="nav-item">
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a href="#" className="nav-link text-white">
                                 <FontAwesomeIcon icon={faGear}/> {isOpen && "Settings"}
                             </a>

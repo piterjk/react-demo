@@ -14,6 +14,7 @@ import Aside from "./components/layout/Aside";
 import TaskMain from "./components/plm/task/TaskMain";
 import EcoMain from "./components/plm/eco/EcoMain";
 import QualityMain from "./components/plm/quality/QualityMain";
+import GridDragAndDrop from "./components/showcase/GridDragAndDrop";
 
 
 
@@ -27,7 +28,6 @@ function AuthenticatedRoute({children}) {
 }
 
 function App() {
-    const authContext = useAuth();
 
     return (
       <div className="App">
@@ -68,6 +68,12 @@ function App() {
                               <AuthenticatedRoute>
                                   <QualityMain/>
                               </AuthenticatedRoute>} />
+                          {/* 쇼케이스 */}
+                          <Route path='/showcase-dndcards' element={
+                              <AuthenticatedRoute>
+                                  <GridDragAndDrop/>
+                              </AuthenticatedRoute>} />
+
 
                           <Route path='/login' element={<Login/>} />
                           <Route path={'*'} element={<Error/>} />
