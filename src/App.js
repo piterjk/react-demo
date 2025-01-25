@@ -16,6 +16,7 @@ import EcoMain from "./components/plm/eco/EcoMain";
 import QualityMain from "./components/plm/quality/QualityMain";
 import GridDragAndDrop from "./components/showcase/GridDragAndDrop";
 import GridTable from "./components/showcase/GridTable";
+import ChartsJS from "./components/showcase/ChartsJS";
 
 
 
@@ -77,6 +78,10 @@ function App() {
                           <Route path='/showcase-gridtable' element={
                               <AuthenticatedRoute>
                                   <GridTable/>
+                              </AuthenticatedRoute>} />
+                          <Route path='/showcase-charts' element={
+                              <AuthenticatedRoute>
+                                  <ChartsJS/>
                               </AuthenticatedRoute>} />
 
                           <Route path='/login' element={<Login/>} />

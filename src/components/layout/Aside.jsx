@@ -90,6 +90,11 @@ function Aside(){
                                         그리드 테이블(ag)
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link to={'showcase-charts'} className="nav-link text-white">
+                                        차트
+                                    </Link>
+                                </li>
 
                             </ul>
                         </li>
