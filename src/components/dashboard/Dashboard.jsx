@@ -158,7 +158,7 @@ const Dashboard = () => {
             <div
                 style={{
                     position: "fixed",
-                    top: "130px",
+                    bottom: "60px",
                     right: "20px",
                     zIndex: 1050,
                 }}
