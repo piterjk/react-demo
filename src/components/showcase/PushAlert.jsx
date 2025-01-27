@@ -74,7 +74,7 @@ const PushAlert = () => {
         if ("Notification" in window && Notification.permission === "granted") {
             new Notification(title, {
                 body,
-                icon: "https://via.placeholder.com/100",
+                icon: <FaCheckCircle />,
             });
         }
     };
