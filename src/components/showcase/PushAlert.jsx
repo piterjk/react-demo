@@ -74,7 +74,7 @@ const PushAlert = () => {
         if ("Notification" in window && Notification.permission === "granted") {
             new Notification(title, {
                 body,
-                icon: <FaCheckCircle />,
+                icon: '/react-demo/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg',
             });
         }
     };
