@@ -95,7 +95,11 @@ function Aside(){
                                         차트
                                     </Link>
                                 </li>
-
+                                <li>
+                                    <Link to={'showcase-pushalert'} className="nav-link text-white">
+                                        푸시 알림
+                                    </Link>
+                                </li>
                             </ul>
                         </li>
                         <li className="nav-item">

@@ -17,6 +17,7 @@ import QualityMain from "./components/plm/quality/QualityMain";
 import GridDragAndDrop from "./components/showcase/GridDragAndDrop";
 import GridTable from "./components/showcase/GridTable";
 import ChartsJS from "./components/showcase/ChartsJS";
+import PushAlert from "./components/showcase/PushAlert";
 
 
 
@@ -82,6 +83,10 @@ function App() {
                           <Route path='/showcase-charts' element={
                               <AuthenticatedRoute>
                                   <ChartsJS/>
+                              </AuthenticatedRoute>} />
+                          <Route path='/showcase-pushalert' element={
+                              <AuthenticatedRoute>
+                                  <PushAlert/>
                               </AuthenticatedRoute>} />
 
                           <Route path='/login' element={<Login/>} />
