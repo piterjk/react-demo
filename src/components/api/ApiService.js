@@ -9,10 +9,23 @@ if( sessionStorage.getItem('token') ){
     headers = {Authorization: `Bearer ${sessionStorage.getItem('token')}`}
 }
 
-const apiClient = axios.create({
+export const apiClient = axios.create({
     baseURL: 'http://localhost:8080',
-    headers:headers,
 })
+
+// 요청을 보내기 전에 헤더에 토큰 자동 추가 (인터셉터 사용)
+apiClient.interceptors.request.use(
+    (config) => {
+        const token = sessionStorage.getItem("token");
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
 
 
 export const retrieveLogin = (username,password) => {
@@ -22,7 +35,7 @@ export const retrieveLogin = (username,password) => {
             return response.data;   // JWT 토큰 반환
         })
         .catch(error => {
-            console.error("로그인 실패:", error.response ? error.response.data : error.message);
+            console.error("인증 실패:", error.response ? error.response.data : error.message);
             throw error;
         });
 }

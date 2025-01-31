@@ -100,6 +100,12 @@ function Aside(){
                                         푸시 알림
                                     </Link>
                                 </li>
+
+                                <li>
+                                    <Link to={'showcase-oauthapi'} className="nav-link text-white">
+                                        OAuth 2.0 API Test
+                                    </Link>
+                                </li>
                             </ul>
                         </li>
                         <li className="nav-item">

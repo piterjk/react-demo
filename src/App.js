@@ -18,6 +18,7 @@ import GridDragAndDrop from "./components/showcase/GridDragAndDrop";
 import GridTable from "./components/showcase/GridTable";
 import ChartsJS from "./components/showcase/ChartsJS";
 import PushAlert from "./components/showcase/PushAlert";
+import OauthApi from "./components/showcase/OauthApi";
 //import SpringLogin from "./components/login/SpringLogin";
 
 
@@ -88,6 +89,11 @@ function App() {
                           <Route path='/showcase-pushalert' element={
                               <AuthenticatedRoute>
                                   <PushAlert/>
+                              </AuthenticatedRoute>} />
+
+                          <Route path='/showcase-oauthapi' element={
+                              <AuthenticatedRoute>
+                                  <OauthApi/>
                               </AuthenticatedRoute>} />
 
                           <Route path='/login' element={<Login/>} />
