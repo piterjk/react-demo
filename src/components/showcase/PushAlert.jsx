@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { FaCheckCircle, FaExclamationTriangle, FaTimesCircle } from "react-icons/fa"; // 아이콘
 
 
-let count = 0;
-
 const PushAlert = () => {
 
     // 로컬 스토리지에서 메시지 불러오기
