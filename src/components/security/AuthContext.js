@@ -1,4 +1,5 @@
 import {createContext, useContext, useEffect, useState} from "react";
+import {retrieveLogin} from "../api/ApiService";
 
 
 export const AuthContext = createContext();
@@ -22,6 +23,32 @@ const AuthProvider = ({ children }) => {
         console.log(`storedUser : ${storedUser}`);
     }, []);
 
+
+    // //spring boot auth
+    // function login(username, password) {
+    //     return retrieveLogin(username, password)
+    //         .then(response => {
+    //             console.log(response); // 서버 응답 확인
+    //             if (response && response.token) {
+    //                 setAuthenticated(true)
+    //                 setUser(username);
+    //                 sessionStorage.setItem('token', JSON.stringify(response.token));
+    //                 sessionStorage.setItem('user', JSON.stringify(username));
+    //                 return true;
+    //             } else {
+    //                 logout(); // 로그아웃 처리
+    //                 return false;
+    //             }
+    //         })
+    //         .catch(err => {
+    //             console.log("로그인 실패:", err);
+    //             logout(); // 로그아웃 처리
+    //             return false;
+    //         });
+    //
+    //
+    // }
+
     function login(email, password) {
         if( email === 'piterjk@naver.com' && password === '1234'){
             setAuthenticated(true)
@@ -38,6 +65,7 @@ const AuthProvider = ({ children }) => {
     }
 
     function logout(){
+        sessionStorage.removeItem('token');
         sessionStorage.removeItem('user');
         setAuthenticated(false)
         setUser(null)

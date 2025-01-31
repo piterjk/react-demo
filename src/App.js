@@ -18,6 +18,7 @@ import GridDragAndDrop from "./components/showcase/GridDragAndDrop";
 import GridTable from "./components/showcase/GridTable";
 import ChartsJS from "./components/showcase/ChartsJS";
 import PushAlert from "./components/showcase/PushAlert";
+//import SpringLogin from "./components/login/SpringLogin";
 
 
 
@@ -26,7 +27,7 @@ function AuthenticatedRoute({children}) {
 
     if( authContext.isAuthenticated )
         return children
-   
+
     return <Navigate to={"/login"} />
 }
 
